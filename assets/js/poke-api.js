@@ -10,9 +10,9 @@ function convertPokeApiDetailToPokemon(pokeDetail) {    // Função que converte
   const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name);  // Mapeia os tipos do Pokémon a partir dos dados do detalhe.
   const [type] = types;                                                  // Pega o primeiro tipo para uso posterior.
 
-  pokemon.types = types;                                                  // Array de tipos do Pokémon.
+  pokemon.types = types;                                                 // Array de tipos do Pokémon.
   pokemon.type = type;                                                   // Tipo principal do Pokémon.
-  pokemon.photo = pokeDetail.sprites.other.dream_world.front_default;    // URL da imagem do Pokémon.
+  pokemon.photo = pokeDetail['sprites']['versions']['generation-v']['black-white']['animated']['front_default']; // URL da imagem do Pokémon.
 
   return pokemon;   // Retorna o objeto Pokémon personalizado.
 }
